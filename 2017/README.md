@@ -4,9 +4,9 @@ My solutions for the year 2017. I was trying to solve most of it using Answer Se
 
 ## Solving
 
-For example, to obtain the solution for part one of day one:
+For example, to obtain the solution for part one of day four:
 
-    python3 4/1/translate.py < 4/input.txt | dlv -cautious -silent query.lp 4/solve.lp --
+    python3 4/1/translate.py < 4/input.txt | dlv -cautious -silent ../query.lp 4/solve.lp --
 
 ## Testing
 
