@@ -1,4 +1,10 @@
-**/input.txt
+# Challenge inputs
+input.txt
+
+# Testing inputs (often given as part of the problem statement)
+small.txt
+small-*.txt
+
 .idea
 solve
 
