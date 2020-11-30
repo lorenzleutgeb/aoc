@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 {-# LANGUAGE LambdaCase #-}
 
 import           Data.List.Split      (dropBlanks, split, dropDelims, oneOf)

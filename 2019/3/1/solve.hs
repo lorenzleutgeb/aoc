@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 import Data.List       as L
 import Data.List.Split as LS
 import Data.Set        as S

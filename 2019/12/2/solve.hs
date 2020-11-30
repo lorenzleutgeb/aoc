@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 import Data.Function   (on)
 import Data.List       (elemIndex, transpose)
 import Data.Maybe      (catMaybes)

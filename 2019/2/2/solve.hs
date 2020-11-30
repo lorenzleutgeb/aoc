@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 import Data.List       as L
 import Data.List.Split as S
 import Data.Maybe      as M

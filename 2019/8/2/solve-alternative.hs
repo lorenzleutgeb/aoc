@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 import Data.Char       (digitToInt)
 import Data.List       (intercalate, transpose)
 import Data.List.Split (chunksOf)

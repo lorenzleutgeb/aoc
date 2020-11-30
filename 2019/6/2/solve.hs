@@ -1,3 +1,6 @@
+{- stack script
+ --resolver ghc-8.10.2
+ -}
 import           Data.List.Split      (splitOn)
 import qualified Data.Map        as M (fromList, lookup)
 import           Data.Maybe           (fromJust)

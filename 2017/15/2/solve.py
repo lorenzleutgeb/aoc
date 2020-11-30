@@ -7,7 +7,6 @@ def a():
         if x % 4 == 0:
             yield x
 
-
 def b():
     x = 8921
     while True:
