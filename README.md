@@ -7,12 +7,16 @@ released every day.
 This repository contains my solutions. The problem statements can be found on
 the Advent of Code website.
 
+## 2020
+
+Haskell, again.
+
 ## 2019
 
 I used Haskell.
 
-    ghc solve.hs
-    ./solve < ../input.txt
+    cd $YEAR/$DAY/$LEVEL
+    stack solve.hs < ../input.txt
 
 ## 2018
 
