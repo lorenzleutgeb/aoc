@@ -7,22 +7,13 @@
 import Text.Parsec
 import Text.Parsec.String
 
-main :: IO ()
-main =
-  interact $
-    show
-      . length
-      . filter check
-      . eitherError
-      . parse (many line) ""
-
 eitherError :: Show a => Either a b -> b
 eitherError = either (error . show) id
 
 type Input = ((Int, Int), Char, String)
 
-check :: Input -> Bool
-check (range, c, password) = let cnt = (length $ filter (c ==) password) in (fst range) <= cnt && cnt <= (snd range)
+check1 :: Input -> Bool
+check1 (range, c, password) = let cnt = (length $ filter (c ==) password) in (fst range) <= cnt && cnt <= (snd range)
 
 line :: Parser Input
 line = do
@@ -33,10 +24,19 @@ line = do
   c <- letter
   _ <- string ": "
   password <- rest
-  return $ ((read rangeMin, read rangeMax), c, password)
+  return ((read rangeMin, read rangeMax), c, password)
 
 lf :: Char
 lf = '\n'
 
 rest :: Parser String
 rest = many1 (noneOf [lf]) <* char lf
+
+check2 :: Input -> Bool
+check2 (range, c, password) = (password !! (fst range - 1) == c) /= (password !! (snd range - 1) == c)
+
+main :: IO ()
+main = do
+  lines <- eitherError . parse (many line) "" <$> getContents
+  print $ length $ filter check1 lines
+  print $ length $ filter check2 lines
