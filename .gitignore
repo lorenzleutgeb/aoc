@@ -8,6 +8,12 @@ small-*.txt
 .idea
 solve
 
+# Generated
+aoc.cabal
+
+# Credentials
+cookies.txt
+
 # Created by https://www.gitignore.io/api/haskell,linux,python
 # Edit at https://www.gitignore.io/?templates=haskell,linux,python
 

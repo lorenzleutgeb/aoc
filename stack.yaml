@@ -2,3 +2,6 @@ nix:
   enable: true
   packages: []
   pure: true
+resolver: lts-16.24
+ghc-options:
+  "$locals": -Wall
