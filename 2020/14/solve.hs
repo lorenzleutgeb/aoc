@@ -54,11 +54,13 @@ run writer = sum . map snd . toList . snd . Prelude.foldl go ("", Data.Map.empty
 
 write1 :: Writer
 write1 mem mask addr v = insert addr v' mem
-  where v' = toDec $ applyMask (toBin v) mask
+  where
+    v' = toDec $ applyMask (toBin v) mask
 
 write2 :: Writer
 write2 mem mask addr v = foldl (\mem' addr' -> insert addr' v mem') mem addrs
-  where addrs = map toDec $ applyMemMask (toBin addr) mask
+  where
+    addrs = map toDec $ applyMemMask (toBin addr) mask
 
 main :: IO ()
 main = do

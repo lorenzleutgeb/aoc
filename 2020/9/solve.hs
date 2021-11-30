@@ -17,7 +17,7 @@ valid ns i
     pre = take window . drop (i - window) $ ns
 
 p1 :: [Int] -> Int
-p1 ns = head $ [x | (i, x) <- zip [0..] ns, not $ valid ns i]
+p1 ns = head $ [x | (i, x) <- zip [0 ..] ns, not $ valid ns i]
 
 p2 :: [Int] -> Int
 p2 ns = minimum ms + maximum ms

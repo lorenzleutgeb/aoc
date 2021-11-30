@@ -24,4 +24,4 @@ main = do
   let earliest = read $ (ls !! 0)
   let buses = splitOn "," (ls !! 1)
   print $ p1 earliest $ map read $ filter (/= "x") buses
-  print $ p2 $ map (\(a, b) -> (-a, toInteger $ read b)) $ filter ((/= "x") . snd) $ zip [0 ..] buses
+  print $ p2 $ map (\(a, b) -> (- a, toInteger $ read b)) $ filter ((/= "x") . snd) $ zip [0 ..] buses

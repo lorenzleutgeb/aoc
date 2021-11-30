@@ -45,4 +45,3 @@ count pattern slope v
 
 bound :: World -> Vec -> Vec
 bound pattern = over x $ flip mod $ length $ head pattern
-

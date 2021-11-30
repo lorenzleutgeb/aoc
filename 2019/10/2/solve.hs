@@ -1,21 +1,23 @@
 {- stack script
  --resolver ghc-8.10.2
  -}
-{-# LANGUAGE PatternSynonyms, ViewPatterns #-}
 
-import Data.Char       (digitToInt)
-import Data.Ord        (comparing)
-import Data.Function   (on)
-import Data.List       (intercalate, nub, maximumBy, sortBy, delete, groupBy)
+{-# LANGUAGE PatternSynonyms #-}
+{-# LANGUAGE ViewPatterns #-}
+
+import Data.Char (digitToInt)
+import Data.Function (on)
+import Data.List (delete, groupBy, intercalate, maximumBy, nub, sortBy)
 import Data.List.Split (chunksOf)
-import Data.Ratio ((%), numerator,denominator)
-import Debug.Trace     (trace)
+import Data.Ord (comparing)
+import Data.Ratio (denominator, numerator, (%))
+import Debug.Trace (trace)
 
 -- http://mathworld.wolfram.com/FareySequence.html
 farey a b
-  | da2 <= 10^6 = farey a1 b
+  | da2 <= 10 ^ 6 = farey a1 b
   | otherwise = na
-    where
+  where
     na = numerator a
     nb = numerator b
     da = denominator a
@@ -28,7 +30,9 @@ pattern num :% denom <- ((\x -> (numerator x, denominator x)) -> (num, denom))
 data Position = Empty | Asteroid deriving (Enum, Eq)
 
 type Coordinate = (Int, Int)
+
 type AsteroidField = [Coordinate]
+
 type Angle = Double
 
 instance Show Position where
@@ -45,7 +49,7 @@ asteroidClassesForCoordinate :: AsteroidField -> Coordinate -> [[Coordinate]]
 asteroidClassesForCoordinate asteroids p = equivs (angle p) $ delete p $ asteroids
 
 distance :: Coordinate -> Coordinate -> Double
-distance (a, b) (x, y) = sqrt $ fromIntegral $ ((+) `on` (^2)) (a - x) (b - y)
+distance (a, b) (x, y) = sqrt $ fromIntegral $ ((+) `on` (^ 2)) (a - x) (b - y)
 
 angle :: Coordinate -> Coordinate -> Angle
 angle (x, y) (a, b) = pi - (atan2 (fromIntegral $ a - x) (fromIntegral $ b - y))
@@ -62,8 +66,7 @@ flatten xs = (\z n -> foldr (\x y -> foldr z y x) n xs) (:) []
 -- 2. Take all (other) asteroids and group them by angle.
 --    This can be done by taking the atan2
 -- 3. For all angles, group the elements by distance.
---    This 
-
+--    This
 
 --  asteroids <- readAsteroids
 --  let laserPos = bestPosition asteroids
@@ -72,13 +75,16 @@ flatten xs = (\z n -> foldr (\x y -> foldr z y x) n xs) (:) []
 --              $ asteroidClassesForPosition asteroids laserPos
 --  return $ (\(x, y) -> 100*x + y) $ shoot 200 classes
 
-main = interact
-  $ show
-  . (\(x, y, bs) -> length bs)
-  . maximumBy (\(x, y, bs) (x', y', bs') -> compare (length bs) (length bs'))
-  . map (\(x, y, bs) -> (x, y, nub bs))
--- . map (\(x, y, bs) -> (x, y, map (\(x, y) -> atan2 (fromIntegral x) (fromIntegral y)) bs))
-  . map (\(x, y, bs) -> (x, y, map (\ (x :% y) -> let z = gcd x y in (x `div` z, y `div` z)) bs))
-  . (\as -> map (\(ax, ay) -> (ax, ay, [(bx - ax) % (by - ay) | (bx, by) <- as, bx /= ax || by /= ay])) as)
-  . map fst . filter (\((_, _), x) -> x == Asteroid)
-  . zipWith (\y l -> fmap (\(x, c) -> ((x, y), parse [c])) l) [0..] . lines
+main =
+  interact $
+    show
+      . (\(x, y, bs) -> length bs)
+      . maximumBy (\(x, y, bs) (x', y', bs') -> compare (length bs) (length bs'))
+      . map (\(x, y, bs) -> (x, y, nub bs))
+      -- . map (\(x, y, bs) -> (x, y, map (\(x, y) -> atan2 (fromIntegral x) (fromIntegral y)) bs))
+      . map (\(x, y, bs) -> (x, y, map (\(x :% y) -> let z = gcd x y in (x `div` z, y `div` z)) bs))
+      . (\as -> map (\(ax, ay) -> (ax, ay, [(bx - ax) % (by - ay) | (bx, by) <- as, bx /= ax || by /= ay])) as)
+      . map fst
+      . filter (\((_, _), x) -> x == Asteroid)
+      . zipWith (\y l -> fmap (\(x, c) -> ((x, y), parse [c])) l) [0 ..]
+      . lines

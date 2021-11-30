@@ -17,4 +17,4 @@ door = 14144084
 
 main :: IO ()
 main = do
-  print $ powMod card (head [i | i <- [3..], powMod 7 i m == door]) m
+  print $ powMod card (head [i | i <- [3 ..], powMod 7 i m == door]) m

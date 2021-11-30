@@ -17,14 +17,11 @@ parse = diffs . bound . sort . map read . lines
 p1 :: [Int] -> Int
 p1 ds = (length $ filter ((==) 1) ds) * (length $ filter ((==) 3) ds)
 
-trib :: [Int]
-trib = 1:1:2:(zipWith3 (\x y z -> x+y+z) trib (tail trib) (tail $ tail trib))
-
 p2 :: [Int] -> Int
-p2 ds = product $ map ((trib !!) . length) $ filter ((==) 1 . head) $ group ds
+p2 ds = product $ map (([1, 1, 2, 4, 7] !!) . length) $ filter ((==) 1 . head) $ group ds
 
 main :: IO ()
 main = do
   ds <- parse <$> getContents
-  print $ p1 ds 
+  print $ p1 ds
   print $ p2 ds

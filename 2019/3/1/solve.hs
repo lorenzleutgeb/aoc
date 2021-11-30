@@ -1,9 +1,10 @@
 {- stack script
  --resolver ghc-8.10.2
  -}
-import Data.List       as L
+
+import Data.List as L
 import Data.List.Split as LS
-import Data.Set        as S
+import Data.Set as S
 
 type Point = (Int, Int)
 
@@ -22,15 +23,18 @@ neighbor (x, y) D = (x, y - 1)
 type Movement = (Direction, Int)
 
 parse :: String -> Movement
-parse (x:xs) = (read [x], read xs)
+parse (x : xs) = (read [x], read xs)
 
-explode _ []          = S.empty
-explode c ((_, 0):ms) = explode c ms
-explode c ((d, l):ms) = S.insert c (explode (neighbor c d) ((d, l - 1):ms))
+explode _ [] = S.empty
+explode c ((_, 0) : ms) = explode c ms
+explode c ((d, l) : ms) = S.insert c (explode (neighbor c d) ((d, l - 1) : ms))
 
 crossings [a, b] = toList $ S.delete origin $ intersection a b
 
-main = interact $ show . minimum
-  . L.map (manhattan origin) . crossings
-  . L.map (explode origin . (\x -> L.map parse (LS.splitOn "," x)))
-  . lines
+main =
+  interact $
+    show . minimum
+      . L.map (manhattan origin)
+      . crossings
+      . L.map (explode origin . (\x -> L.map parse (LS.splitOn "," x)))
+      . lines

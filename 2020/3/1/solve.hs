@@ -44,4 +44,3 @@ count pattern v
 
 bound :: World -> Vec -> Vec
 bound pattern = over x $ flip mod $ length $ head pattern
-

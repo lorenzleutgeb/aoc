@@ -1,8 +1,9 @@
 {- stack script
  --resolver ghc-8.10.2
  -}
-import           Data.List.Split       (splitOn)
-import qualified Data.MultiMap   as MM (fromList, lookup)
+
+import Data.List.Split (splitOn)
+import qualified Data.MultiMap as MM (fromList, lookup)
 
 ltop [x, y] = (x, y)
 

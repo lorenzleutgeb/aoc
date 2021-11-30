@@ -44,8 +44,9 @@ runSingle (Jmp, x) state ip = (state, ip + x)
 runSingle (Nop, _) state ip = (state, ip + 1)
 
 main :: IO ()
-main = interact $
-  show
-  . (\code -> run code 0 0 [])
-  . map parse
-  . lines
+main =
+  interact $
+    show
+      . (\code -> run code 0 0 [])
+      . map parse
+      . lines

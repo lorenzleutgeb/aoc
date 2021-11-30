@@ -7,11 +7,12 @@ import Data.List
 import Data.Maybe (fromJust, listToMaybe)
 import Numeric (readInt)
 
-data Row = F | B deriving (Enum, Read)
-data Col = L | R deriving (Enum, Read)
+data Row = F | B deriving (Bounded, Enum, Read)
+
+data Col = L | R deriving (Bounded, Enum, Read)
 
 readEnum :: Enum a => Int -> (String -> a) -> String -> Int
-readEnum b f = fromJust . fmap fst . listToMaybe . readInt b (const True) (\y -> fromEnum $ f [y])
+readEnum b f = foldl' (\acc x -> acc * b + (fromEnum . f) [x]) 0
 
 readRow :: String -> Int
 readRow = readEnum 2 (read :: String -> Row)
