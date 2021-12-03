@@ -51,13 +51,31 @@ Contrary if there are answers, then these are the cases that need to be investig
 
 ## Others Solutions
 
-My Leaderboard:
+### My Leaderboard
+
+#### 2021
+
+ - https://github.com/kaivogelgesang/aoc
+ - https://github.com/haaase/advent-of-code-2021
+ - https://github.com/vgautam/advent-of-code
+
+#### 2020
+
  - https://github.com/mkmc/AdventOfCode
  - https://github.com/PeterZainzinger/aoc_2020
  - https://github.com/riginding/advent-of-code-2019
 
-Developers in Vienna Leaderboard:
+### Developers in Vienna Leaderboard
+
+#### 2021
+
+ - https://github.com/ad0bert/Advent-of-Code-2021
+ - https://github.com/Patrik64/adventofcode
+ - https://github.com/webpapaya/aoc_2021
+
+#### 2020
+
  - https://github.com/ad0bert/Advent-of-Code-2020
  - https://github.com/cernychristopher/advent2020
  - https://github.com/kixi/aoc2020
- - https://github.com/Patrik64/adventofcode
+
