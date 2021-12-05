@@ -9,6 +9,10 @@ released every day.
 This repository contains my solutions. The problem statements can be found on
 the Advent of Code website.
 
+### 2021
+
+Haskell, maybe some Rust.
+
 ### 2020
 
 Haskell, again.
