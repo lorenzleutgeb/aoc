@@ -9,8 +9,7 @@ fn p2(ns: &[i32]) -> usize {
     p1(&wins)
 }
 
-fn parse() -> Result<Vec<i32>, Error> {
-    let reader: Box<dyn BufRead> = Box::new(BufReader::new(std::io::stdin()));
+fn parse(reader: Box<dyn BufRead>) -> Result<Vec<i32>, Error> {
     let mut ns: Vec<i32> = vec![];
 
     for ln in reader.lines() {
@@ -25,8 +24,31 @@ fn parse() -> Result<Vec<i32>, Error> {
 }
 
 fn main() -> Result<(), Error> {
-    let ns = parse()?;
+    let reader: Box<dyn BufRead> = Box::new(BufReader::new(std::io::stdin()));
+    let ns = parse(reader)?;
     println!("{}", p1(&ns));
     println!("{}", p2(&ns));
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const EXAMPLE: &str = include_str!("./example.txt");
+
+    fn example() -> Vec<i32> {
+        parse(Box::new(BufReader::new(EXAMPLE.as_bytes()))).expect("example is malformed")
+    }
+
+    #[test]
+    fn test_p1() {
+        assert_eq!(p1(&example()), 7);
+    }
+
+
+    #[test]
+    fn test_p2() {
+        assert_eq!(p2(&example()), 5);
+    }
 }

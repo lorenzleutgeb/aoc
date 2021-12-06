@@ -89,8 +89,7 @@ fn points(l: Line) -> Vec<Point> {
     next
 }
 
-fn parse() -> Result<Vec<Line>, Error> {
-    let reader: Box<dyn BufRead> = Box::new(BufReader::new(std::io::stdin()));
+fn parse(reader: Box<dyn BufRead>) -> Result<Vec<Line>, Error> {
     let mut lines: Vec<Line> = vec![];
 
     for ln in reader.lines() {
@@ -117,8 +116,31 @@ fn parse() -> Result<Vec<Line>, Error> {
 }
 
 fn main() -> Result<(), Error> {
-    let lines = parse()?;
+    let reader: Box<dyn BufRead> = Box::new(BufReader::new(std::io::stdin()));
+    let lines = parse(reader)?;
     println!("{:?}", p(&ortho(&lines)));
     println!("{:?}", p(&lines));
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const EXAMPLE: &str = include_str!("./example.txt");
+
+    fn example() -> Vec<Line> {
+        parse(Box::new(BufReader::new(EXAMPLE.as_bytes()))).expect("example is malformed")
+    }
+
+    #[test]
+    fn p1() {
+        assert_eq!(p(&ortho(&example())), 5);
+    }
+
+
+    #[test]
+    fn p2() {
+        assert_eq!(p(&example()), 12);
+    }
 }

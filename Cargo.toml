@@ -1,0 +1,15 @@
+[package]
+name = "aoc"
+version = "0.0.0"
+authors = ["Lorenz Leutgeb <lorenz@leutgeb.xyz>"]
+edition = "2018"
+
+[dependencies]
+
+[[bin]]
+name = "2021-1"
+path = "2021/1/solve.rs"
+
+[[bin]]
+name = "2021-5"
+path = "2021/5/solve.rs"
