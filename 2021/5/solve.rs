@@ -44,6 +44,14 @@ fn ortho(lines: &[Line]) -> Vec<Line> {
         .collect()
 }
 
+fn p1(lines: &[Line]) -> usize {
+    p(&ortho(lines))
+}
+
+fn p2(lines: &[Line]) -> usize {
+    p(lines)
+}
+
 fn points(l: Line) -> Vec<Point> {
     let mut next: Vec<Point> = vec![l.a];
     let mut c = l.a;
@@ -118,8 +126,8 @@ fn parse(reader: Box<dyn BufRead>) -> Result<Vec<Line>, Error> {
 fn main() -> Result<(), Error> {
     let reader: Box<dyn BufRead> = Box::new(BufReader::new(std::io::stdin()));
     let lines = parse(reader)?;
-    println!("{:?}", p(&ortho(&lines)));
-    println!("{:?}", p(&lines));
+    println!("{:?}", p1(&lines));
+    println!("{:?}", p2(&lines));
     Ok(())
 }
 
@@ -134,13 +142,12 @@ mod tests {
     }
 
     #[test]
-    fn p1() {
-        assert_eq!(p(&ortho(&example())), 5);
+    fn test_p1() {
+        assert_eq!(p1(&example()), 5);
     }
 
-
     #[test]
-    fn p2() {
-        assert_eq!(p(&example()), 12);
+    fn test_p2() {
+        assert_eq!(p2(&example()), 12);
     }
 }

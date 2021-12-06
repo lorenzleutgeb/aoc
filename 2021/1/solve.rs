@@ -46,7 +46,6 @@ mod tests {
         assert_eq!(p1(&example()), 7);
     }
 
-
     #[test]
     fn test_p2() {
         assert_eq!(p2(&example()), 5);

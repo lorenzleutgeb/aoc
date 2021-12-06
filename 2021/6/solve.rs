@@ -21,7 +21,6 @@ fn p1(fish: &[i64]) -> i64 {
     p(80, fish)
 }
 
-
 fn p2(fish: &[i64]) -> i64 {
     p(256, fish)
 }
