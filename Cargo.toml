@@ -13,3 +13,7 @@ path = "2021/1/solve.rs"
 [[bin]]
 name = "2021-5"
 path = "2021/5/solve.rs"
+
+[[bin]]
+name = "2021-6"
+path = "2021/6/solve.rs"
