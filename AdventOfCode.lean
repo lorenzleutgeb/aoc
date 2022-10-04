@@ -1,0 +1,1 @@
+import AdventOfCode.Y2022.D1.Solve
