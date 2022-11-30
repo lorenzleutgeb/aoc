@@ -9,6 +9,10 @@ released every day.
 This repository contains my solutions. The problem statements can be found on
 the Advent of Code website.
 
+### 2022
+
+Lean 4 (solutions are in `/AdventOfCode/Y2022/Dx/Solve.lean`), maybe some Rust.
+
 ### 2021
 
 Haskell, maybe some Rust.

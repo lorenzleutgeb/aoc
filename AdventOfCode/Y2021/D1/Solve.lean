@@ -1,3 +1,10 @@
+/--
+def List.take : List α → Nat → List α
+  | _, 0      => []
+  | [], _+1    => []
+  | a::as, n+1 => a :: take n as
+-/
+
 def List.tails : List α → List (List α)
  | []    => []::[]
  | x::xs => (x::xs)::(xs.tails)
