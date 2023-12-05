@@ -17,6 +17,11 @@ cookies.txt
 # Nix
 result
 
+# Lean
+/build
+/lakefile.olean
+/lake-packages/*
+
 # Created by https://www.toptal.com/developers/gitignore/api/haskell,linux,python,rust
 # Edit at https://www.toptal.com/developers/gitignore?templates=haskell,linux,python,rust
 

@@ -1,12 +1,63 @@
 {
   "nodes": {
+    "ProofWidgets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700451233,
+        "narHash": "sha256-cjwj5sWhfPROh0MWorpvSfTqyqF1+/RE682Gt0mlZLE=",
+        "owner": "leanprover-community",
+        "repo": "ProofWidgets4",
+        "rev": "909febc72b4f64628f8d35cd0554f8a90b6e0749",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leanprover-community",
+        "ref": "v0.0.23",
+        "repo": "ProofWidgets4",
+        "type": "github"
+      }
+    },
+    "aesop": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698733273,
+        "narHash": "sha256-ROh5m0ifjkQy02FutjbwCQxRYUnnEcTxfHa5P0o6GJ4=",
+        "owner": "leanprover-community",
+        "repo": "aesop",
+        "rev": "0654e7a1ba1542c3a24f936e52a40b3fee6c13c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leanprover-community",
+        "ref": "v4.2.0",
+        "repo": "aesop",
+        "type": "github"
+      }
+    },
+    "cli": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695286356,
+        "narHash": "sha256-X6sm6Gzu1Pkl7Ww/w947DmtV9OE+DATEqsvRy+6JdXI=",
+        "owner": "leanprover",
+        "repo": "lean4-cli",
+        "rev": "2245a1dda89cbd3e0340527b8682015b99bcec03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leanprover",
+        "ref": "v2.2.0-lv4.0.0",
+        "repo": "lean4-cli",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
-        "lastModified": 1659877975,
-        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
         "type": "github"
       },
       "original": {
@@ -16,27 +67,15 @@
       }
     },
     "flake-utils_2": {
-      "locked": {
-        "lastModified": 1656928814,
-        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
-        "type": "github"
+      "inputs": {
+        "systems": "systems"
       },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
       "locked": {
-        "lastModified": 1656928814,
-        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "lastModified": 1681202837,
+        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
         "type": "github"
       },
       "original": {
@@ -47,37 +86,24 @@
     },
     "lean": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
-        "lean-stage0": "lean-stage0",
+        "flake-utils": "flake-utils",
         "lean4-mode": "lean4-mode",
         "nix": "nix",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1664905072,
-        "narHash": "sha256-cyPEL6VZbDmwYuVJWEewVAoh9E4hHxqborB6JEDTdXw=",
+        "lastModified": 1698714580,
+        "narHash": "sha256-56YtHCiNMP5fJoddSokEl0ws06IwetYLer4aLCnujZA=",
         "owner": "leanprover",
         "repo": "lean4",
-        "rev": "d56708c0e5c2d2ee1bced9fe3e95bfef205d5ea0",
+        "rev": "0d7051497ea09b2b4a4ef608e371b8f317487c3c",
         "type": "github"
       },
       "original": {
         "owner": "leanprover",
-        "repo": "lean4",
-        "type": "github"
-      }
-    },
-    "lean-stage0": {
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-3K/43lSW4WIHNG+HHVKCD1odS63mHuaQ4ueHyTIkcls=",
-        "owner": "leanprover",
-        "repo": "lean4",
-        "rev": "0000000000000000000000000000000000000000",
-        "type": "github"
-      },
-      "original": {
-        "owner": "leanprover",
+        "ref": "v4.2.0",
         "repo": "lean4",
         "type": "github"
       }
@@ -85,11 +111,11 @@
     "lean4-mode": {
       "flake": false,
       "locked": {
-        "lastModified": 1656864638,
-        "narHash": "sha256-Th+IOKGspSZEXJZMnoP9GqsuVZLt137JfgZg7Q0sHxQ=",
+        "lastModified": 1676498134,
+        "narHash": "sha256-u3WvyKxOViZG53hkb8wd2/Og6muTecbh+NdflIgVeyk=",
         "owner": "leanprover",
         "repo": "lean4-mode",
-        "rev": "f23510741b3291d8f9797df9407b1e45d7f22b23",
+        "rev": "2c6ef33f476fdf5eb5e4fa4fa023ba8b11372440",
         "type": "github"
       },
       "original": {
@@ -111,6 +137,23 @@
       "original": {
         "owner": "kristapsdz",
         "repo": "lowdown",
+        "type": "github"
+      }
+    },
+    "mathlib": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698730543,
+        "narHash": "sha256-Ks4NGyz2g3CewCaTqt1yoCdwCHpMaGY06jKW7XKiYI4=",
+        "owner": "leanprover-community",
+        "repo": "mathlib4",
+        "rev": "753159252c585df6b6aa7c48d2b8828d58388b79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leanprover-community",
+        "ref": "v4.2.0",
+        "repo": "mathlib4",
         "type": "github"
       }
     },
@@ -168,75 +211,98 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1657208011,
-        "narHash": "sha256-BlIFwopAykvdy1DYayEkj6ZZdkn+cVgPNX98QVLc0jM=",
+        "lastModified": 1701058557,
+        "narHash": "sha256-fux7HlrnoNs93MN0kET4AfiYwg/expoasndRCFeDRyk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2770cc0b1e8faa0e20eb2c6aea64c256a706d4f2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1659446231,
-        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
+        "rev": "070b5cf9f70bc7ef2dfd739a1f7d6c563fe64bd1",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "ref": "nixos-21.11",
+        "ref": "nixos-23.11",
         "type": "indirect"
       }
     },
-    "nixpkgs_4": {
+    "quote": {
+      "flake": false,
       "locked": {
-        "lastModified": 1659102345,
-        "narHash": "sha256-Vbzlz254EMZvn28BhpN8JOi5EuKqnHZ3ujFYgFcSGvk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "11b60e4f80d87794a2a4a8a256391b37c59a1ea7",
+        "lastModified": 1700012235,
+        "narHash": "sha256-oL1I+Ri1jj1NLG/9a2V0pawl3qm7ouLGFXH3owRjd1c=",
+        "owner": "leanprover-community",
+        "repo": "quote4",
+        "rev": "d3a1d25f3eba0d93a58d5d3d027ffa78ece07755",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
+        "owner": "leanprover-community",
+        "repo": "quote4",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "flake-utils": "flake-utils",
+        "ProofWidgets": "ProofWidgets",
+        "aesop": "aesop",
+        "cli": "cli",
         "lean": "lean",
-        "nixpkgs": "nixpkgs_3",
-        "rust-overlay": "rust-overlay"
+        "mathlib": "mathlib",
+        "nixpkgs": "nixpkgs_2",
+        "quote": "quote",
+        "rust-overlay": "rust-overlay",
+        "std": "std"
       }
     },
     "rust-overlay": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_4"
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1664851876,
-        "narHash": "sha256-v0DBElK+PmU3ID9/uHwtCNHp6uGuWmxj6/elpq4Cqas=",
+        "lastModified": 1701137803,
+        "narHash": "sha256-0LcPAdql5IhQSUXJx3Zna0dYTgdIoYO7zUrsKgiBd04=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "148815c92641976b798efb2805a50991de4bac7f",
+        "rev": "9dd940c967502f844eacea52a61e9596268d4f70",
         "type": "github"
       },
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "std": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698726084,
+        "narHash": "sha256-3iVN8Uxgu4k8qTJFlzHmGguD4xEjMCBg3xleP/UYPAw=",
+        "owner": "leanprover",
+        "repo": "std4",
+        "rev": "409a644492aaff846b6b2963e221c7f1ceaf30cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leanprover",
+        "ref": "v4.2.0",
+        "repo": "std4",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     }

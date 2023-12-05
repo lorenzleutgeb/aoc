@@ -15,6 +15,8 @@ def List.sum [HAdd α α α] [Inhabited α] : List α → α := List.foldl HAdd.
 
 #eval [1, 2, 3].sum
 
+namespace AdventOfCode.Y2021.D1
+
 def p1 [LT α] [DecidableRel (@LT.lt α _)] (ns : List α) : Nat := List.length $ List.filter (fun x => x == true) $ List.zipWith (fun a b => LT.lt a b) ns (ns.tail!)
 
 def p2 [LT α] [DecidableRel (@LT.lt α _)] [HAdd α α α] [Inhabited α] (ns : List α) : Nat := p1 $ List.map (fun x => List.sum (x.take 3)) $ ns.tails
@@ -23,7 +25,7 @@ partial def lines : IO (List String) := do
   let line := (←  (← IO.getStdin).getLine)
   match line with
   | "" => return []
-  | x  => 
+  | x  =>
       let rest ← lines
       return (x.trim)::rest
 

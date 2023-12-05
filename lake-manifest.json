@@ -1,0 +1,12 @@
+{"version": 6,
+ "packagesDir": "lake-packages",
+ "packages":
+ [{"git":
+   {"url": "https://github.com/leanprover/lean4-cli",
+    "subDir?": null,
+    "rev": "2245a1dda89cbd3e0340527b8682015b99bcec03",
+    "opts": {},
+    "name": "Cli",
+    "inputRev?": "v2.2.0-lv4.0.0",
+    "inherited": false}}],
+ "name": "AdventOfCode"}
